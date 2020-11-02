@@ -1,0 +1,9 @@
+{% extends 'base_template.html' %}
+{% load static %}
+{% block content %}
+    <div>
+        <img src="{% static 'images.png'%}" alt="" />
+        <p>{{articles.title}}</p>
+        <p>{{articles.description}}</p>
+    </div>
+{% endblock %}
