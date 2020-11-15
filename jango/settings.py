@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 
@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'articles'
+    'articles',
+    'products',
+    'users'
 ]
 
 MIDDLEWARE = [
@@ -75,6 +77,7 @@ WSGI_APPLICATION = 'jango.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'mysql.connector.django',
@@ -87,6 +90,7 @@ DATABASES = {
         },
     }
 }
+# DATABASES = {   'default': {      'ENGINE': 'djongo',      'NAME': 'jango',   }}
 
 
 # Password validation
@@ -127,3 +131,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR, 'assets']
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'medias/')
